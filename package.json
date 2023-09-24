@@ -1,0 +1,30 @@
+{
+  "name": "@escapace/renovate-configuration",
+  "description": "",
+  "version": "0.0.0",
+  "author": {
+    "name": "escapace",
+    "email": "opensource@escapace.com"
+  },
+  "bugs": "https://github.com/escapace/renovate-configuration/issues",
+  "dependencies": {
+    "renovate": "^36.106.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.7.1",
+    "@commitlint/config-conventional": "17.7.0",
+    "husky": "8.0.3",
+    "is-ci": "3.0.1",
+    "lint-staged": "14.0.1",
+    "prettier": "3.0.3",
+    "prettier-config-escapace": "1.0.6",
+    "syncpack": "11.2.1"
+  },
+  "homepage": "https://github.com/escapace/renovate-configuration",
+  "license": "MPL-2.0",
+  "repository": "escapace/renovate-configuration.git",
+  "scripts": {
+    "prepare": "is-ci || husky install"
+  },
+  "type": "module"
+}
