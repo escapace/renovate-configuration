@@ -1,0 +1,94 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "automerge": false,
+  "automergeType": "pr",
+  "constraintsFiltering": "strict",
+  "dependencyDashboard": true,
+  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardFooter": "",
+  "dependencyDashboardHeader": "",
+  "dependencyDashboardLabels": ["dependencies"],
+  "enabledManagers": ["npm"],
+  "extends": ["config:recommended", "schedule:weekly"],
+  "hostRules": [
+    {
+      "encrypted": {
+        "token": "wcFMA/xDdHCJBTolARAAg9cZ/N74A9cwGrmpeTvy7lDIHRKR4bESH+rCOuSQ8csXXnLRmdq+A1n+6yGUrDt+veWzo/hW76Yc+WckBX3D3BORErxE/KnxVKlfrBBH7ilJ6fEuIYZc3A5FSO5D8CNpjJcjBHuABxKXwyjVbKJQar4TQS2iqYVvDZg94F/Xd3JmddAPITYNL1NLDFhd+ICD9HEy1TE39ZqNu166t6A2pXkC46KpA5uOq4KQ1ofan/vktKyRkDZ5cEWqWUTeqShDz6XPH+rP/8Gjn0sHZfn1dHQVwFcLrWyz9xvX+5Gwfxm2PLL4HVRRoRCG85PkahKhjOm5OnZHEjM76RhqMh1WpDp7iUgU1uIP3sncn2NzEUbml+/B4tFB1NhKBmbYHdsoYT3fp75T8dshZTojvfU616CI9q0YcCtAv+8kBDdM5fmUTRC72/DzoW+cAmFYO7TZmG6V5A0Rly8y1x69laIVoGqL/2or0LfO4nBQKzg2sJmESSgLaxkhp3iXoKG2N7EC6lr49ML+6S6PG1h+b3VCWvM5xn2ofJYMdoqJjdbO03lw7GjTe6WwLT3AerN76v9GEFuOpyjW2lRU0KVsSQJ4gjiIpTszAgAL1MelCpYB08yFOEZXePVr9n8Y30czfXzmsnXnrWjMqBP/LRXVz+MU7d0DZ1B38olYXy1omdl+sVzSdwGbJJbt1MCoHvazz/PKLHTNieCdBnCdmYx2H7U3XxZoD257LsnUlcKmYqFjXJ/AfBN7OQzYR9kpTTJLRLVVArx4t9aPE9gLp05YxU2Z5pD7TwDtdqLjIU3bRTGd/eFcQhLbgXU746yauL1cFajeX3Bv5fXvfZCj"
+      },
+      "hostType": "npm",
+      "matchHost": "https://npm.pkg.github.com/"
+    }
+  ],
+  "internalChecksFilter": "strict",
+  "labels": ["dependencies"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "minimumReleaseAge": "7 days",
+  "npmrc": "@escapace:registry=https://npm.pkg.github.com/",
+  "packageRules": [
+    {
+      "matchDepTypes": ["peerDependencies"],
+      "rangeStrategy": "widen",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "pin",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "bump",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "fix"
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackageNames": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "automerge": true,
+      "groupName": "escapace",
+      "groupSlug": "escapace",
+      "matchPackageNames": ["@escapace/*"]
+    },
+    {
+      "automerge": true,
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": ["@types/node"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "enabled": false,
+      "matchDepTypes": ["engines"]
+    }
+  ],
+  "platformCommit": "enabled",
+  "postUpdateOptions": ["pnpmDedupe"],
+  "prConcurrentLimit": 0,
+  "prCreation": "immediate",
+  "prFooter": "",
+  "prHeader": "",
+  "prHourlyLimit": 0,
+  "rebaseWhen": "behind-base-branch",
+  "semanticCommits": "enabled",
+  "updateNotScheduled": true,
+  "vulnerabilityAlerts": {
+    "addLabels": ["security"],
+    "assignees": ["yyxi"],
+    "enabled": true,
+    "prCreation": "immediate",
+    "rangeStrategy": "update-lockfile",
+    "schedule": []
+  }
+}

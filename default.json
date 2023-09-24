@@ -1,0 +1,98 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "automerge": false,
+  "automergeType": "pr",
+  "constraintsFiltering": "strict",
+  "dependencyDashboard": true,
+  "dependencyDashboardAutoclose": true,
+  "dependencyDashboardFooter": "",
+  "dependencyDashboardHeader": "",
+  "dependencyDashboardLabels": ["dependencies"],
+  "enabledManagers": ["npm"],
+  "extends": ["config:recommended", "schedule:weekly"],
+  "internalChecksFilter": "strict",
+  "labels": ["dependencies"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "minimumReleaseAge": "7 days",
+  "packageRules": [
+    {
+      "matchDepTypes": ["peerDependencies"],
+      "rangeStrategy": "widen",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "pin",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "bump",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "fix"
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackageNames": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "automerge": true,
+      "groupName": "escapace",
+      "groupSlug": "escapace",
+      "matchPackageNames": [
+        "@cassiopeia/*",
+        "@cepheus/*",
+        "@escapace/*",
+        "@pointe/*",
+        "cassiopeia",
+        "cepheus",
+        "eslint-config-escapace",
+        "esroll",
+        "pointe",
+        "prettier-config-escapace",
+        "seedpods",
+        "snaproll"
+      ],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "automerge": true,
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": ["@types/node"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "enabled": false,
+      "matchDepTypes": ["engines"]
+    }
+  ],
+  "platformCommit": "enabled",
+  "postUpdateOptions": ["pnpmDedupe"],
+  "prConcurrentLimit": 0,
+  "prCreation": "immediate",
+  "prFooter": "",
+  "prHeader": "",
+  "prHourlyLimit": 0,
+  "rebaseWhen": "behind-base-branch",
+  "semanticCommits": "enabled",
+  "updateNotScheduled": true,
+  "vulnerabilityAlerts": {
+    "addLabels": ["security"],
+    "assignees": ["yyxi"],
+    "enabled": true,
+    "prCreation": "immediate",
+    "rangeStrategy": "update-lockfile",
+    "schedule": []
+  }
+}
