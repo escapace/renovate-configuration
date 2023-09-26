@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/escapace/renovate-configuration",
   "license": "MPL-2.0",
-  "repository": "escapace/renovate-configuration.git",
+  "repository": "escapace/renovate-configuration",
   "scripts": {
     "prepare": "is-ci || husky install"
   },
