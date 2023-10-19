@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabledManagers": ["npm"],
-  "extends": ["config:recommended", "schedule:weekly", "group:allNonMajor"],
+  "extends": ["config:recommended", "schedule:weekly"],
   "semanticCommits": "enabled",
   "automerge": false,
   "automergeType": "pr",
@@ -18,10 +18,46 @@
   "npmrc": "@escapace:registry=https://npm.pkg.github.com/",
   "packageRules": [
     {
-      "matchUpdateTypes": ["lockFileMaintenance"],
-      "semanticCommitType": "chore",
+      "matchDepTypes": ["peerDependencies"],
+      "rangeStrategy": "widen",
       "semanticCommitScope": "deps",
-      "automerge": true
+      "semanticCommitType": "chore"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "pin",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "bump",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "fix"
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "automerge": true,
+      "groupName": "high merge confidence",
+      "groupSlug": "high-confidence",
+      "matchConfidence": ["high", "very high"]
+    },
+    {
+      "automerge": true,
+      "groupName": "escapace",
+      "groupSlug": "escapace",
+      "matchPackagePatterns": ["^@escapace/"]
+    },
+    {
+      "automerge": true,
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
     },
     {
       "enabled": false,
@@ -29,26 +65,8 @@
       "matchUpdateTypes": ["major"]
     },
     {
-      "matchDepTypes": ["engines"],
-      "enabled": false
-    },
-    {
-      "matchDepTypes": ["devDependencies"],
-      "rangeStrategy": "pin",
-      "semanticCommitType": "chore",
-      "semanticCommitScope": "deps"
-    },
-    {
-      "matchDepTypes": ["dependencies"],
-      "rangeStrategy": "bump",
-      "semanticCommitType": "fix",
-      "semanticCommitScope": "deps"
-    },
-    {
-      "matchDepTypes": ["peerDependencies"],
-      "rangeStrategy": "widen",
-      "semanticCommitType": "chore",
-      "semanticCommitScope": "deps"
+      "enabled": false,
+      "matchDepTypes": ["engines"]
     }
   ],
   "vulnerabilityAlerts": {
