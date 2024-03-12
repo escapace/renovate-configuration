@@ -78,6 +78,8 @@
   "internalChecksFilter": "strict",
   "constraintsFiltering": "strict",
   "dependencyDashboard": true,
+  "dependencyDashboardLabels": ["dependencies"],
+  "dependencyDashboardAutoclose": true,
   "labels": ["dependencies"],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
