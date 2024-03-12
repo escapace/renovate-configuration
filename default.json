@@ -79,6 +79,8 @@
   "constraintsFiltering": "strict",
   "dependencyDashboard": true,
   "dependencyDashboardLabels": ["dependencies"],
+  "dependencyDashboardHeader": "",
+  "dependencyDashboardFooter": "",
   "dependencyDashboardAutoclose": true,
   "labels": ["dependencies"],
   "prConcurrentLimit": 0,
