@@ -82,6 +82,8 @@
   "dependencyDashboardHeader": "",
   "dependencyDashboardFooter": "",
   "dependencyDashboardAutoclose": true,
+  "prHeader": "",
+  "prFooter": "",
   "labels": ["dependencies"],
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
