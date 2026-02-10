@@ -9,7 +9,7 @@
   "dependencyDashboardHeader": "",
   "dependencyDashboardLabels": ["dependencies"],
   "enabledManagers": ["npm"],
-  "extends": ["config:recommended", "schedule:weekly"],
+  "extends": ["config:recommended", "schedule:weekly", "workarounds:typesNodeVersioning"],
   "hostRules": [
     {
       "encrypted": {
@@ -21,9 +21,7 @@
   ],
   "internalChecksFilter": "strict",
   "labels": ["dependencies"],
-  "lockFileMaintenance": {
-    "enabled": true
-  },
+  "lockFileMaintenance": { "enabled": true },
   "minimumReleaseAge": "7 days",
   "npmrc": "@escapace:registry=https://npm.pkg.github.com/",
   "packageRules": [
@@ -55,7 +53,26 @@
       "automerge": true,
       "groupName": "escapace",
       "groupSlug": "escapace",
-      "matchPackageNames": ["@escapace/*"]
+      "matchPackageNames": [
+        "prettier-config-escapace",
+        "@escapace/*",
+        "esroll",
+        "eslint-config-escapace",
+        "coastal",
+        "fastify-fetch",
+        "@pangram/*",
+        "@pointe/*",
+        "caslon",
+        "@caslon/*",
+        "cepheus",
+        "seedpods",
+        "pointe",
+        "@cepheus/*",
+        "cassiopeia",
+        "snaproll",
+        "@cassiopeia/*"
+      ],
+      "matchUpdateTypes": ["minor", "patch"]
     },
     {
       "automerge": true,
@@ -63,15 +80,8 @@
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
     },
-    {
-      "enabled": false,
-      "matchPackageNames": ["@types/node"],
-      "matchUpdateTypes": ["major"]
-    },
-    {
-      "enabled": false,
-      "matchDepTypes": ["engines"]
-    }
+    { "enabled": false, "matchPackageNames": ["@types/node"], "matchUpdateTypes": ["major"] },
+    { "enabled": false, "matchDepTypes": ["engines"] }
   ],
   "platformCommit": "enabled",
   "postUpdateOptions": ["pnpmDedupe"],
@@ -86,9 +96,13 @@
   "vulnerabilityAlerts": {
     "addLabels": ["security"],
     "assignees": ["yyxi"],
+    "automerge": true,
+    "dependencyDashboardApproval": false,
     "enabled": true,
+    "minimumReleaseAge": null,
     "prCreation": "immediate",
     "rangeStrategy": "update-lockfile",
-    "schedule": []
+    "schedule": [],
+    "vulnerabilityFixStrategy": "lowest"
   }
 }

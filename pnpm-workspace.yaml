@@ -1,0 +1,15 @@
+blockExoticSubdeps: true
+
+childConcurrency: 1
+
+ignoredBuiltDependencies:
+  - better-sqlite3
+  - core-js-pure
+  - dtrace-provider
+  - protobufjs
+  - re2
+
+onlyBuiltDependencies:
+  - lefthook
+
+strictDepBuilds: true
