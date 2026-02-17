@@ -70,6 +70,7 @@
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
     },
+    { "allowedVersions": "<10", "matchPackageNames": ["eslint"] },
     { "enabled": false, "matchPackageNames": ["@types/node"], "matchUpdateTypes": ["major"] },
     { "enabled": false, "matchDepTypes": ["engines"] }
   ],
