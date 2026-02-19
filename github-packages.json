@@ -77,7 +77,8 @@
         "snaproll",
         "@cassiopeia/*"
       ],
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["minor", "patch"],
+      "schedule": ["at any time"]
     },
     {
       "automerge": true,
@@ -90,14 +91,16 @@
       "groupName": "node",
       "groupSlug": "node",
       "matchDepTypes": ["devDependencies", "engines"],
-      "matchPackageNames": ["@types/node", "node"]
+      "matchPackageNames": ["@types/node", "node"],
+      "schedule": ["at any time"]
     },
     {
       "automerge": true,
       "groupName": "typescript",
       "groupSlug": "typescript",
       "matchDepTypes": ["devDependencies", "peerDependencies"],
-      "matchPackageNames": ["typescript"]
+      "matchPackageNames": ["typescript"],
+      "schedule": ["at any time"]
     },
     { "allowedVersions": "<10", "matchPackageNames": ["eslint"] },
     {
@@ -109,6 +112,12 @@
       "allowedVersions": "<25",
       "matchDepTypes": ["devDependencies", "engines"],
       "matchPackageNames": ["@types/node", "node"]
+    },
+    {
+      "enabled": false,
+      "matchDepTypes": ["engines"],
+      "matchPackageNames": ["node"],
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ],
   "platformAutomerge": true,
@@ -130,7 +139,7 @@
     "minimumReleaseAge": null,
     "prCreation": "immediate",
     "rangeStrategy": "update-lockfile",
-    "schedule": [],
+    "schedule": ["at any time"],
     "vulnerabilityFixStrategy": "lowest"
   }
 }
