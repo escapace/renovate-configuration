@@ -17,7 +17,7 @@
   "packageRules": [
     {
       "matchDepTypes": ["peerDependencies"],
-      "rangeStrategy": "widen",
+      "rangeStrategy": "bump",
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
     },
@@ -70,9 +70,31 @@
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
     },
+    {
+      "automerge": true,
+      "groupName": "node",
+      "groupSlug": "node",
+      "matchDepTypes": ["devDependencies", "engines"],
+      "matchPackageNames": ["@types/node", "node"]
+    },
+    {
+      "automerge": true,
+      "groupName": "typescript",
+      "groupSlug": "typescript",
+      "matchDepTypes": ["devDependencies", "peerDependencies"],
+      "matchPackageNames": ["typescript"]
+    },
     { "allowedVersions": "<10", "matchPackageNames": ["eslint"] },
-    { "enabled": false, "matchPackageNames": ["@types/node"], "matchUpdateTypes": ["major"] },
-    { "enabled": false, "matchDepTypes": ["engines"] }
+    {
+      "allowedVersions": "<6",
+      "matchDepTypes": ["devDependencies", "peerDependencies"],
+      "matchPackageNames": ["typescript"]
+    },
+    {
+      "allowedVersions": "<25",
+      "matchDepTypes": ["devDependencies", "engines"],
+      "matchPackageNames": ["@types/node", "node"]
+    }
   ],
   "platformAutomerge": true,
   "platformCommit": "enabled",

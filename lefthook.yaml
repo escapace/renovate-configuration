@@ -17,24 +17,6 @@ pre-commit:
       priority: 1
       run: pnpm exec ls-lint --config '.ls-lint.yaml'
 
-    syncpack-fix-mismatches:
-      glob: '{package.json,**/package.json,pnpm-lock.yaml}'
-      priority: 2
-      run: pnpm exec syncpack fix-mismatches
-      stage_fixed: true
-
-    syncpack-set-semver-ranges:
-      glob: '{package.json,**/package.json,pnpm-lock.yaml}'
-      priority: 3
-      run: pnpm exec syncpack set-semver-ranges
-      stage_fixed: true
-
-    syncpack-format:
-      glob: '{package.json,**/package.json,pnpm-lock.yaml}'
-      priority: 4
-      run: pnpm exec syncpack format
-      stage_fixed: true
-
     pnpm-install:
       glob: '{package.json,**/package.json,pnpm-lock.yaml}'
       priority: 5

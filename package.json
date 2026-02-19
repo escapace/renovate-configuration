@@ -8,18 +8,17 @@
   },
   "bugs": "https://github.com/escapace/renovate-configuration/issues",
   "dependencies": {
-    "renovate": "^43.5.6"
+    "renovate": "^43.25.10"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.4.1",
-    "@commitlint/config-conventional": "20.4.1",
+    "@commitlint/cli": "20.4.2",
+    "@commitlint/config-conventional": "20.4.2",
     "@ls-lint/ls-lint": "2.3.1",
     "eslint": "9.39.2",
-    "eslint-config-escapace": "5.10.2",
-    "lefthook": "2.1.0",
+    "eslint-config-escapace": "5.12.1",
+    "lefthook": "2.1.1",
     "prettier": "3.8.1",
-    "prettier-config-escapace": "1.2.1",
-    "syncpack": "13.0.4"
+    "prettier-config-escapace": "1.2.2"
   },
   "homepage": "https://github.com/escapace/renovate-configuration",
   "license": "MPL-2.0",
