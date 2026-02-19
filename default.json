@@ -16,16 +16,21 @@
   "minimumReleaseAge": "7 days",
   "packageRules": [
     {
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "pin",
+      "semanticCommitScope": "deps",
+      "semanticCommitType": "chore"
+    },
+    {
       "matchDepTypes": ["peerDependencies"],
       "rangeStrategy": "bump",
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "rangeStrategy": "pin",
-      "semanticCommitScope": "deps",
-      "semanticCommitType": "chore"
+      "matchDepTypes": ["peerDependencies"],
+      "matchUpdateTypes": ["major"],
+      "semanticCommitType": "feat"
     },
     {
       "matchDepTypes": ["dependencies"],
