@@ -23,6 +23,7 @@
   "labels": [],
   "lockFileMaintenance": { "enabled": true },
   "minimumReleaseAge": "7 days",
+  "minimumReleaseAgeBehaviour": "timestamp-required",
   "npmrc": "@escapace:registry=https://npm.pkg.github.com/",
   "packageRules": [
     {
@@ -78,6 +79,7 @@
         "@cassiopeia/*"
       ],
       "matchUpdateTypes": ["minor", "patch"],
+      "minimumReleaseAge": null,
       "schedule": ["at any time"]
     },
     {

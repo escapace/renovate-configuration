@@ -14,6 +14,7 @@
   "labels": [],
   "lockFileMaintenance": { "enabled": true },
   "minimumReleaseAge": "7 days",
+  "minimumReleaseAgeBehaviour": "timestamp-required",
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
@@ -68,6 +69,7 @@
         "@cassiopeia/*"
       ],
       "matchUpdateTypes": ["minor", "patch"],
+      "minimumReleaseAge": null,
       "schedule": ["at any time"]
     },
     {
