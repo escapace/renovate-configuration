@@ -94,7 +94,7 @@
       "matchPackageNames": ["typescript"],
       "schedule": ["at any time"]
     },
-    { "allowedVersions": "<10", "matchPackageNames": ["eslint"] },
+    { "allowedVersions": "<11", "matchPackageNames": ["eslint"] },
     {
       "allowedVersions": "<6",
       "matchDepTypes": ["devDependencies", "peerDependencies"],
