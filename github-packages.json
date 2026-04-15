@@ -106,7 +106,7 @@
     },
     { "allowedVersions": "<11", "matchPackageNames": ["eslint"] },
     {
-      "allowedVersions": "<6",
+      "allowedVersions": "<7",
       "matchDepTypes": ["devDependencies", "peerDependencies"],
       "matchPackageNames": ["typescript"]
     },
