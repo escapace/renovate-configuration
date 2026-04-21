@@ -82,8 +82,16 @@
       "automerge": true,
       "groupName": "node",
       "groupSlug": "node",
-      "matchDepTypes": ["devDependencies", "engines"],
-      "matchPackageNames": ["@types/node", "node"],
+      "matchDepTypes": ["engines"],
+      "matchPackageNames": ["node"],
+      "schedule": ["at any time"]
+    },
+    {
+      "automerge": true,
+      "groupName": "pnpm",
+      "groupSlug": "pnpm",
+      "matchDepTypes": ["engines"],
+      "matchPackageNames": ["pnpm"],
       "schedule": ["at any time"]
     },
     {
@@ -102,13 +110,21 @@
     },
     {
       "allowedVersions": "<25",
-      "matchDepTypes": ["devDependencies", "engines"],
-      "matchPackageNames": ["@types/node", "node"]
+      "matchDepTypes": ["devDependencies"],
+      "matchPackageNames": ["@types/node"]
     },
+    { "allowedVersions": "<25", "matchDepTypes": ["engines"], "matchPackageNames": ["node"] },
+    { "allowedVersions": "<11", "matchDepTypes": ["engines"], "matchPackageNames": ["pnpm"] },
     {
       "enabled": false,
       "matchDepTypes": ["engines"],
       "matchPackageNames": ["node"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "enabled": false,
+      "matchDepTypes": ["engines"],
+      "matchPackageNames": ["pnpm"],
       "matchUpdateTypes": ["minor", "patch"]
     }
   ],
