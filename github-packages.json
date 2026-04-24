@@ -126,6 +126,14 @@
     { "allowedVersions": "<25", "matchDepTypes": ["engines"], "matchPackageNames": ["node"] },
     { "allowedVersions": "<11", "matchDepTypes": ["engines"], "matchPackageNames": ["pnpm"] },
     {
+      "allowedVersions": "<0.30.0",
+      "groupName": "pyodide",
+      "groupSlug": "pyodide",
+      "matchPackageNames": ["pyodide"],
+      "rangeStrategy": "pin",
+      "separateMinorPatch": true
+    },
+    {
       "enabled": false,
       "matchDepTypes": ["engines"],
       "matchPackageNames": ["node"],
