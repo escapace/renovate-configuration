@@ -18,23 +18,27 @@
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
+      "matchManagers": ["npm"],
       "rangeStrategy": "pin",
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
     },
     {
       "matchDepTypes": ["peerDependencies"],
+      "matchManagers": ["npm"],
       "rangeStrategy": "bump",
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
     },
     {
       "matchDepTypes": ["peerDependencies"],
+      "matchManagers": ["npm"],
       "matchUpdateTypes": ["major"],
       "semanticCommitType": "feat"
     },
     {
       "matchDepTypes": ["dependencies"],
+      "matchManagers": ["npm"],
       "rangeStrategy": "bump",
       "semanticCommitScope": "deps",
       "semanticCommitType": "fix"
@@ -42,6 +46,7 @@
     {
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch",
+      "matchManagers": ["npm"],
       "matchPackageNames": ["*"],
       "matchUpdateTypes": ["minor", "patch"]
     },
@@ -49,6 +54,7 @@
       "automerge": true,
       "groupName": "escapace",
       "groupSlug": "escapace",
+      "matchManagers": ["npm"],
       "matchPackageNames": [
         "prettier-config-escapace",
         "@escapace/*",
@@ -74,6 +80,7 @@
     },
     {
       "automerge": true,
+      "matchManagers": ["npm"],
       "matchUpdateTypes": ["lockFileMaintenance"],
       "semanticCommitScope": "deps",
       "semanticCommitType": "chore"
@@ -83,6 +90,7 @@
       "groupName": "node",
       "groupSlug": "node",
       "matchDepTypes": ["engines"],
+      "matchManagers": ["npm"],
       "matchPackageNames": ["node"],
       "schedule": ["at any time"]
     },
@@ -91,6 +99,7 @@
       "groupName": "pnpm",
       "groupSlug": "pnpm",
       "matchDepTypes": ["engines"],
+      "matchManagers": ["npm"],
       "matchPackageNames": ["pnpm"],
       "schedule": ["at any time"]
     },
@@ -99,26 +108,40 @@
       "groupName": "typescript",
       "groupSlug": "typescript",
       "matchDepTypes": ["devDependencies", "peerDependencies"],
+      "matchManagers": ["npm"],
       "matchPackageNames": ["typescript"],
       "schedule": ["at any time"]
     },
-    { "allowedVersions": "<11", "matchPackageNames": ["eslint"] },
+    { "allowedVersions": "<11", "matchManagers": ["npm"], "matchPackageNames": ["eslint"] },
     {
       "allowedVersions": "<7",
       "matchDepTypes": ["devDependencies", "peerDependencies"],
+      "matchManagers": ["npm"],
       "matchPackageNames": ["typescript"]
     },
     {
       "allowedVersions": "<25",
       "matchDepTypes": ["devDependencies"],
+      "matchManagers": ["npm"],
       "matchPackageNames": ["@types/node"]
     },
-    { "allowedVersions": "<25", "matchDepTypes": ["engines"], "matchPackageNames": ["node"] },
-    { "allowedVersions": "<11", "matchDepTypes": ["engines"], "matchPackageNames": ["pnpm"] },
+    {
+      "allowedVersions": "<25",
+      "matchDepTypes": ["engines"],
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["node"]
+    },
+    {
+      "allowedVersions": "<11",
+      "matchDepTypes": ["engines"],
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["pnpm"]
+    },
     {
       "allowedVersions": "<0.30.0",
       "groupName": "pyodide",
       "groupSlug": "pyodide",
+      "matchManagers": ["npm"],
       "matchPackageNames": ["pyodide"],
       "rangeStrategy": "pin",
       "separateMinorPatch": true
@@ -126,12 +149,14 @@
     {
       "enabled": false,
       "matchDepTypes": ["engines"],
+      "matchManagers": ["npm"],
       "matchPackageNames": ["node"],
       "matchUpdateTypes": ["minor", "patch"]
     },
     {
       "enabled": false,
       "matchDepTypes": ["engines"],
+      "matchManagers": ["npm"],
       "matchPackageNames": ["pnpm"],
       "matchUpdateTypes": ["minor", "patch"]
     }
