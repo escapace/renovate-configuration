@@ -10,6 +10,18 @@
   "dependencyDashboardLabels": [],
   "enabledManagers": ["npm"],
   "extends": ["config:recommended", "schedule:weekly", "workarounds:typesNodeVersioning"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/examples/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**",
+    "**/test-support/**",
+    "**/__fixtures__/**",
+    "**/lib/**"
+  ],
   "internalChecksFilter": "strict",
   "labels": [],
   "lockFileMaintenance": { "enabled": true },
