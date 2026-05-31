@@ -9,7 +9,12 @@ ignoredBuiltDependencies:
   - protobufjs
   - re2
 
-onlyBuiltDependencies:
-  - lefthook
+allowBuilds:
+  better-sqlite3: false
+  core-js-pure: false
+  dtrace-provider: false
+  lefthook: true
+  protobufjs: false
+  re2: false
 
 strictDepBuilds: true
